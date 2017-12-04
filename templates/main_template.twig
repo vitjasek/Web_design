@@ -10,23 +10,25 @@
   <body>
     {# header #}
     <header>
-      <nav>
-        <a href="index.php">Home</a>
-        <a href="predni_naprava.php">Přední náprava</a>
-        <a href="zadni_naprava.php">Zadní náprava</a>
-        <a href="motor.php">Motor</a>
-        <a href="karoserie.php">Karoserie</a>
-        <a href="interier.php">Interiér</a>
+      <div id="main_header"></div>
+      <nav id="menu">
+        <ul id="menu_items" class="menu_items">
+          <li {%if index %} id="active" {% endif %}><a href="index.php">Domů</a></li>
+          <li {%if acustic %} id="active" {% endif %}><a href="acustic.php">Akustická</a></li>
+          <li {%if electric %} id="active" {% endif %}><a href="electric.php">Elektrická</a></li>
+          <li {%if jazz %} id="active" {% endif %}><a href="jazz.php">Jazzová</a></li>
+          <li {%if blues %} id="active" {% endif %}><a href="blues.php">Bluesová</a></li>
+        </ul>
       </nav>
     </header>
     {# ------ #}
-
-    {% block main_content %}{%endblock%}
-
-    {# footer #}
-    <footer>
-      <p>Copyright &copy; Vít Jašek, Leon Bálint</p>
-    </footer>
-    {# ------ #}
-  </body>
+    <main>
+      {% block main_content %}{%endblock%}
+    </main>
+  {# footer #}
+  <footer id="footer">
+    <p>Copyright &copy; Vít Jašek, Leon Bálint</p>
+  </footer>
+  {# ------ #}
+</body>
 </html>

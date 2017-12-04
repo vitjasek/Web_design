@@ -101,7 +101,9 @@ body{
   font-style: italic;
   font-size: small;
 }
-
+#red{
+  color: red;
+}
 @media print{
   img{
     display: none;
